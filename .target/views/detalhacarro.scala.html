@@ -1,0 +1,33 @@
+@(carro:Carro)
+
+@meutemplate("Carros - Detalhes de carro"){
+	<h4 align="center">Carro: @carro.getModelo()</h4>
+	
+	<table class="table table-striped">
+  		<tr>
+  			<th>Marca</th>
+  			<td>@carro.getMarca()</td>
+  		</tr>
+		<tr>
+  			<th>Modelo</th>
+  			<td>@carro.getModelo()</td>
+  		</tr>
+  		
+  		<tr>
+  			<th>Cor</th>
+  			<td>@carro.getCor()</td>
+  		</tr>
+	</table>
+	
+	<a href="/carros">
+		<button class="btn">
+			<i class="icon-arrow-left"></i> Voltar
+		</button>
+	</a>
+	
+	<a href="/editarcarro/@carro.getId()">
+		<button class="btn">
+			<i class="icon-pencil"></i> Editar
+		</button>
+	</a>
+}

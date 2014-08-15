@@ -1,0 +1,33 @@
+@(mensagem:String)(carro:Carro)
+@meutemplate("Carros - Cadastrar Carro"){
+	@if(mensagem!=""){
+	<div class="alert alert-success">
+  		@mensagem
+	</div>
+	}
+	<form class="form-horizontal" action="/atualizarcarro/@carro.getId()" method="POST">
+		<div class="control-group">
+			<label class="control-label" for="marca">Marca</label>
+			<div class="controls">
+				<input type="text" id="marca" name="marca" value="@carro.getMarca()">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="modelo">Modelo</label>
+			<div class="controls">
+				<input type="text" id="modelo" name="modelo" value="@carro.getModelo()">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="cor">Cor</label>
+			<div class="controls">
+				<input type="text" id="coor" name="cor" value="@carro.getCor()">
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn">Salvar</button>
+			</div>
+		</div>
+	</form>
+}

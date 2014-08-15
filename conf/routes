@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /play                        controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# rotas de CarrosController
+
+GET		/							controllers.CarrosController.home()
+GET		/cadastrarcarro				controllers.CarrosController.cadastrarCarro()
+POST 	/salvarcarro				controllers.CarrosController.salvar()
+GET		/carros						controllers.CarrosController.listar()
+GET		/detalharcarro/:id			controllers.CarrosController.detalhar(id: Long)
+GET		/editarcarro/:id			controllers.CarrosController.editar(id: Long)
+POST	/atualizarcarro/:id			controllers.CarrosController.atualizar(id: Long)
+GET		/excluir/:id					controllers.CarrosController.excluir(id: Long)
